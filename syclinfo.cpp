@@ -97,16 +97,13 @@ std::ostream& operator<<(std::ostream& lhs, const std::vector<T>& rhs)
   }
   return lhs;
 }
-
+namespace std{
 std::ostream& operator<<(std::ostream& lhs, const cl::sycl::id<3>& idx)
 {
   lhs << idx[0] << " " << idx[1] << " " << idx[2];
   return lhs;
 }
 
-namespace cl{
-namespace sycl {
-namespace info {
 
 std::ostream& operator<<(std::ostream& lhs, cl::sycl::info::device_type dtype)
 {
@@ -148,9 +145,6 @@ std::ostream& operator<<(std::ostream& lhs, cl::sycl::info::partition_affinity_d
 {
   lhs << partition_affinity_domain_representation[domain];
   return lhs;
-}
-
-}
 }
 }
 
